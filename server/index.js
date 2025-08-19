@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
-const connect_DB = require('./connect DB/connect_DB');
+const connect_DB = require('./connect_DB/connect_DB');
 
 const app = express();
 
@@ -12,7 +12,7 @@ app.use(cors());
 
 app.use(morgan('dev'));
 
-app.use('/user', require('./user routes/UserRoutes'));
+app.use('/user', require('./user_routes/UserRoutes'));
 
 app.listen(process.env.PORT, async () => {
   await connect_DB();

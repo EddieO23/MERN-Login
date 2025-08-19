@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: mern-login-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: DB_URL
+        sync: false

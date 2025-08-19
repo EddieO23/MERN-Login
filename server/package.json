@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "debug": "node -r dotenv/config index.js",
+    "debug-paths": "node -e \"console.log('Current directory:', process.cwd()); console.log('Directory contents:', require('fs').readdirSync('.'));\""
   },
   "keywords": [],
   "author": "",

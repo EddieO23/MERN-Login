@@ -5,10 +5,15 @@ const cors = require('cors');
 // const connect_DB = require('./connect_DB/connect_DB');
 
 const path = require('path');
-const connect_DB = require(path.join(__dirname, 'connect_DB', 'connect_DB'));
+const connect_DB = require(path.join(__dirname, 'connect_DB', 'connect_DB.js'));
 
-console.log('Current directory:', __dirname);
-console.log('Resolved path:', path.join(__dirname, 'connect_DB', 'connect_DB'));
+// Add extensive logging
+console.log('__dirname:', __dirname);
+console.log('Resolved path:', path.join(__dirname, 'connect_DB', 'connect_DB.js'));
+console.log('Full directory contents:', require('fs').readdirSync(__dirname));
+
+
+
 
 
 const app = express();

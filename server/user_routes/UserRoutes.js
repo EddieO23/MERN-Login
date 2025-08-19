@@ -10,6 +10,10 @@ const {
 } = require('../user_controller/UserController');
 const JWT_AUTH = require('../middleware/JWT_Auth');
 
+const resolveProjectPath = require('../path-resolver');
+const UserController = require(resolveProjectPath('user_controller', 'UserController'));
+
+
 const router = require('express').Router();
 
 router.post('/register', register);

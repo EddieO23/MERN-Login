@@ -1,9 +1,19 @@
-const UserModel = require('../models/UserModel');
+// const UserModel = require('../models/UserModel');
 const otp_generator = require('otp-generator');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const sendEmail = require('../email_service/Email');
+
+// Change from:
+// const UserModel = require('../models/UserModel');
+
+// To:
+const path = require('path');
+// const UserModel = require(path.join(__dirname, '..', 'models', 'UserModel'));
+
+const resolveProjectPath = require('../path-resolver');
+const UserModel = require(resolveProjectPath('models', 'UserModel'));
 
 const register = async (req, res) => {
   try {

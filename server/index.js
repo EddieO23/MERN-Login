@@ -30,8 +30,9 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan('dev'));
 
-// Routes
-app.use('/user', require('./user_routes/UserRoutes'));
+// Robust route import
+const resolveProjectPath = require('./path-resolver');
+app.use('/user', require(resolveProjectPath('user_routes', 'UserRoutes')));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -53,6 +54,8 @@ const startServer = async () => {
     // Start the server
     app.listen(PORT, () => {
       console.log(`Server is up and running at port: ${PORT}`);
+      console.log('Current directory:', __dirname);
+      console.log('Directory contents:', require('fs').readdirSync('.'));
     });
   } catch (error) {
     console.error('Failed to start server:', error);

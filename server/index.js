@@ -2,15 +2,15 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
-// const connect_DB = require('./connect_DB/connect_DB');
+const connect_DB = require('./connect_DB/connect_DB');
 
-const path = require('path');
-const connect_DB = require(path.join(__dirname, 'connect_DB', 'connect_DB.js'));
+// const path = require('path');
+// const connect_DB = require(path.join(__dirname, 'connect_DB', 'connect_DB'));
 
-// Add extensive logging
-console.log('__dirname:', __dirname);
-console.log('Resolved path:', path.join(__dirname, 'connect_DB', 'connect_DB.js'));
-console.log('Full directory contents:', require('fs').readdirSync(__dirname));
+// // Add extensive logging
+// console.log('__dirname:', __dirname);
+// console.log('Resolved path:', path.join(__dirname, 'connect_DB', 'connect_DB'));
+// console.log('Full directory contents:', require('fs').readdirSync(__dirname));
 
 
 

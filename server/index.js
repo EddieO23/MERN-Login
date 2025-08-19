@@ -2,7 +2,14 @@ const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv').config();
 const cors = require('cors');
-const connect_DB = require('./connect_DB/connect_DB');
+// const connect_DB = require('./connect_DB/connect_DB');
+
+const path = require('path');
+const connect_DB = require(path.join(__dirname, 'connect_DB', 'connect_DB'));
+
+console.log('Current directory:', __dirname);
+console.log('Resolved path:', path.join(__dirname, 'connect_DB', 'connect_DB'));
+
 
 const app = express();
 
